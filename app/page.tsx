@@ -4,12 +4,7 @@ import { redirect, useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter()
-  const {data: session} = useSession({
-    required: true,
-    onUnauthenticated(){
-      redirect("/api/auth/signin/credentials")
-    }
-  })
+  const {data: session} = useSession()
 
   console.log(session)
 

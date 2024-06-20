@@ -42,7 +42,7 @@ export const options: NextAuthOptions = {
                 session.user.password = token.password as string;
             }
             return session;
-        },
+        },   
     },
     session: {
         strategy: 'jwt', // Use JWT for session
