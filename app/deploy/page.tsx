@@ -31,7 +31,7 @@ export default function Deploy(){
         event.preventDefault()
 
         const formData = new FormData(event.currentTarget)
-        const response = await fetchWithTimeout('http://5.35.90.236/deployment-server/api/ubuntu/deploy', {
+        const response = await fetchWithTimeout(`${process.env.DEPLOYMENT_SERVER}/api/ubuntu/deploy`, {
             method: 'POST',
             body: formData,
             timeout: 300000
