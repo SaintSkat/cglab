@@ -16,7 +16,7 @@ const checkUbuntuUser = (username: string, password: string): Promise<User | Sig
     return new Promise((resolve, reject) => {
         const platform = os.platform();
 
-        if (platform === 'linux') {
+        if (platform === 'linux' || platform === 'darwin') {
             const command = `echo "${password}" | su - ${username} -c 'exit'`;
 
             exec(command, (error, stdout, stderr) => {
